@@ -1,0 +1,151 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-height: 100vh;
+}
+
+.modal-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  display: block;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.content {
+  background-color: #fff;
+  text-align: center;
+  border-radius: 12px;
+  padding: 1.5rem 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  width: 80%;
+  max-width: 694px;
+}
+
+.close-btn {
+  text-align: right;
+  cursor: pointer;
+}
+
+.modal-title {
+  white-space: nowrap;
+  margin-bottom: 2rem;
+}
+
+.input-box {
+  margin: 1rem 0;
+  text-align: left;
+  border: 1px solid yellow;
+  border-radius: 8px;
+  display: flex;
+  width: 100%;
+}
+
+.input-box input {
+  outline: 0;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  padding: 1rem;
+  width: 75%;
+  font-family: inherit;
+  line-height: 20px;
+  font-size: 20px;
+}
+
+.input-box button {
+  outline: 0;
+  background-color: brown;
+  color: white;
+  font-family: inherit;
+  border: none;
+  width: 25%;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 10px 1rem;
+}
+
+.input-box button span {
+  font-size: 20px;
+}
+
+.stats {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.url {
+  color: black;
+}
+
+.detailed-stats {
+  text-decoration: none;
+  color: brown;
+  padding: 14px 4rem;
+  border: 1px solid brown;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 600px) {
+  .content {
+    border-radius: 20px;
+    padding: 1.5rem 2rem;
+  }
+
+  .modal-title {
+    white-space: unset;
+    text-align: left;
+  }
+
+  .input-box button span {
+    display: none;
+  }
+
+  .stats {
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+  }
+
+  .detailed-stats {
+    width: 80%;
+    padding: 14px 1rem;
+    white-space: unset;
+  }
+}
