@@ -1,0 +1,202 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #c0eded;
+    background-image: url("/images/wave.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #174f3f;
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    /*1.5 multiply the root fontsize*/
+    margin: 1rem;
+}
+
+.navbar-links ul {
+    margin: 25px 20px;
+    padding: 0;
+    display: flex;
+    /*line it side by side*/
+}
+
+.navbar-links ul li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: #174f3f;
+    padding: .9rem 3rem;
+    display: block;
+}
+
+.navbar-links li a.signup {
+    background-color: #174f3f;
+    border-radius: 10px;
+    color: #c0eded;
+}
+
+.toggle-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #174f3f;
+    border-radius: 10px;
+}
+
+.container {
+    background-color: #c0eded;
+    max-width: 27%;
+    padding: 30px;
+    box-shadow: 1px 1px 10px;
+    border-radius: 10px;
+    position: relative;
+    top: 90px;
+    left: 15%;
+}
+
+form {
+    margin: 0 auto;
+}
+
+form input {
+    display: block;
+    margin: 25px 0;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+}
+
+.urllink {
+    background-color: #c0eded;
+    border: none;
+    text-decoration: underline;
+    margin-right: 30%;
+}
+
+.bubit {
+    padding: 15px 55px;
+    background-color: #174f3f;
+    border: none;
+    color: #c0eded;
+    border-radius: 15px;
+}
+
+img {
+    max-width: 45%;
+    position: absolute;
+    left: 45%;
+    top: 20%;
+}
+
+@media (max-width: 800px) {
+    .navbar a {
+        background-color: #c0eded;
+    }
+    .toggle-button {
+        display: flex;
+    }
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar-links ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    .navbar-links ul li a {
+        text-align: center;
+        background-color: #c0eded;
+        color: #174f3f;
+    }
+    .navbar-links li a {
+        padding: .5rem 1rem;
+    }
+    .navbar-links.active {
+        display: flex;
+    }
+    .navbar-links ul li a.signup {
+        background-color: #174f3f;
+        border-radius: unset;
+        color: #c0eded;
+    }
+    img {
+        max-width: 100%;
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+    .container {
+        max-width: 70%;
+        padding: 30px;
+        position: relative;
+        top: 15%;
+        left: 15%;
+        z-index: 1;
+    }
+    form input {
+        margin: 20px 0;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        width: 100%;
+    }
+    .urllink {
+        margin-right: 35%;
+        padding: 0 35px;
+    }
+    .bubit {
+        padding: 15px 65px;
+        border-radius: 15px;
+    }
+}
+
+@media (max-width: 440px) {
+    .urllink {
+        margin-right: auto;
+        padding: 0 10px;
+    }
+    .bubit {
+        padding: 15px 55px;
+        border-radius: 15px;
+    }
+}
+
+@media (max-width: 350px) {
+    .urllink {
+        margin-right: auto;
+        padding: 0 10px;
+    }
+    .bubit {
+        padding: 15px 25px;
+        border-radius: 15px;
+    }
+}

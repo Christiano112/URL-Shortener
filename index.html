@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>URL Shortener</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="brand-title">Bub-It</div>
+        <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+            <ul>
+                <li><a href="#">Log in</a></li>
+                <li><a href="#" class="signup">Sign up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <img src="/images/Search-pana.svg" alt="search">
+        <div class="container">
+            <form>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+                    <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+                </svg>
+
+                <label for="lurl">Enter your long URL here</label>
+                <input type="url" id="lurl" name="lurl">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+                    <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+                </svg>
+                <label for="surl">Customize your link</label>
+                <input type="url" id="surl" name="surl">
+                <button class="urllink">My URL</button>
+                <button class="bubit">Bub It</button>
+            </form>
+
+            <!-- <img src="/images/Search engines-amico.svg"> -->
+
+        </div>
+
+    </main>
+    <script src="/script.js" defer></script>
+</body>
+
+</html>
