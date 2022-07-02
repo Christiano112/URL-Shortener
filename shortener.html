@@ -1,0 +1,83 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Urls</title>
+
+    <link rel="stylesheet" href="./shortener.css">
+</head>
+
+<body>
+    <h1>Your Recent URLs</h1>
+    <button id="go-back"><a href="./index.html"><img src="./images/icons8-arrow-pointing-left-30 (2).png" alt=""></a></button>
+    <ul id="link-list">
+        <!--Recent urls display here-->
+    </ul>
+    <div id="clear-btn-div">
+        <button id="clear-btn" type="button">Clear all URLs</button>
+    </div>
+
+    <script>
+        const ul = document.querySelector("#link-list");
+
+        let links = Array.from(JSON.parse(localStorage.getItem("links")));
+
+        links.forEach(link => {
+            const newModalBody = document.querySelector("#new-modal-body");
+            const list = document.querySelector("ul");
+            const li = document.createElement("li");
+            li.innerHTML = `
+                <div id="img-div">
+                    <img id="www" src="./images/logo-websites-31321.png" alt="">
+                </div>
+                <div id="div">
+                    <div id="links-div">
+                        <div id="links-sub-div">
+                        <div>
+                            <p id="original-link">${link.originalLink}</p>
+                            <p class="bubbed-link">${link.bubbedLink}</p>
+                        </div>
+                        <p id="link-time">${link.clickedDate} ${link.clickedTime}</p>
+                    </div>
+                    </div>
+                    <div id="btn-div">
+                        <button id="detailed"><a href="#">Detailed stats</a></button>
+                        <button class="copy" id="${link.bubbedLink}" onclick="copyTextFunction()">
+                        <img src="./images/icons8-copy-17.png" alt="">Copy</button>
+                </div>
+            `
+            ul.insertBefore(li, ul.children[0]);
+            document.getElementById("clear-btn").style.display = "inline-block";
+        })
+
+        localStorage.removeItem('myLinks');
+
+        const clearBtn = document.getElementById("clear-btn");
+
+        let clearFunction = () => {
+            ul.innerHTML = "";
+            localStorage.clear();
+            clearBtn.style.display = "none";
+        };
+
+        clearBtn.addEventListener("click", clearFunction);
+
+        document.querySelectorAll(".copy").forEach((item, index) => {
+            item.addEventListener("click", async (event) => {
+                if (!navigator.clipboard) {
+                    return;
+                }
+                try {
+                    await navigator.clipboard.writeText(event.target.id);
+                    event.target.textContent = "Copied"
+                } catch (err) {
+                    console.error("Failed to copy!", err);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
