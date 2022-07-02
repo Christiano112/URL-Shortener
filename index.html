@@ -31,16 +31,20 @@
         <img src="/images/Search-pana.svg" alt="search">
         <div class="container">
             <form id="url-form">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="20" height="20"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
                     <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
                 </svg>
                 <label for="lurl">Enter your long URL here</label>
                 <input type="text" id="lurl" name="lurl">
 
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="20" height="20"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
                     <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
                 </svg>
@@ -62,15 +66,15 @@
             <!-- <div class="modal" id="modal"></div> -->
             <div class="content">
                 <p class="close-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="44" height="44"
-                        viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round"
-                        stroke-linejoin="round" id="close-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="44"
+                        height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round" id="close-btn">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                         <line x1="18" y1="6" x2="6" y2="18" />
                         <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
                 </p>
-    
+
                 <!-- <button class="close-btn" id="close-btn">close btn</button> -->
                 <h1 class="modal-title">Your Shortened Bub-URL:</h1>
                 <div class="input-box">
@@ -86,9 +90,9 @@
                         <span>Copy</span>
                     </button>
                 </div>
-    
+
                 <div class="stats">
-                    <a href="#" class="url">My URLs</a>
+                    <a href="./shortener.html" class="url">My URLs</a>
                     <a href="#" class="detailed-stats">Detailed Stats</a>
                 </div>
             </div>
@@ -97,7 +101,31 @@
 
     <!-- 404 ERROR NOT FOUND POP UP -->
 
+    <script>
+        document.querySelector("form").addEventListener("submit", e => {
+            e.preventDefault();
+        });
 
+        const form = document.querySelector("form");
+
+        form.addEventListener("submit", function () {
+            const ul = document.querySelector("#link-list");
+            const first = document.getElementById("lurl");
+            const second = document.getElementById("surl");
+            const time = new Date();
+            const date = new Date();
+
+            if (first.value === "" || second.value === "") {
+                return
+            }
+
+            localStorage.setItem("links", JSON.stringify([...JSON.parse(localStorage.getItem("links") || "[]"),
+            { originalLink: first.value, bubbedLink: second.value, clickedTime: time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), clickedDate: date.toLocaleDateString() }]));
+
+            first.value = "";
+            second.value = "";
+        })
+    </script>
     <script src="/script.js" defer></script>
     <script src="url-shortener_api.js"></script>
 </body>
