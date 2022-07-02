@@ -28,9 +28,9 @@ closeModalBtn.addEventListener("click", () => {
   viewPopUp.style.display = "none";
 });
 
-modal.addEventListener("click", () => {
-  viewPopUp.style.display = "none";
-});
+// modal.addEventListener("click", () => {
+//   viewPopUp.style.display = "none";
+// });
 
 function copyText() {
   if (link.value === "") return;

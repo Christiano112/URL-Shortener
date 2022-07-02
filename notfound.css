@@ -1,9 +1,9 @@
 *{box-sizing: border-box;}
 
-body{
+/* body{
     margin: 0;
     font-family: sans-serif;
-}
+} */
 
 header{
     font-family: monospace;
@@ -39,7 +39,7 @@ header{
     margin: 10px;
 }
 
-.button{
+.return_button{
     color: white;
     background-color: hsl(0, 65%, 37%);
     border-radius: 5px;
@@ -47,12 +47,12 @@ header{
     text-decoration: none;
 }
 
-.button svg{
+.return_button svg{
     position: relative;
     top: 3px;
 }
 
-.button:hover{
+.return_button:hover{
     color: hsl(0, 65%, 37%);
     background-color: white;
     border: 0.5px solid hsl(0, 65%, 37%);
@@ -60,7 +60,7 @@ header{
     height: 1em;
 }
 
-.button:hover svg{
+.return_button:hover svg{
     stroke: hsl(0, 65%, 37%);
 }
 
@@ -78,7 +78,7 @@ header{
         width: 80%;
         margin-bottom: -30px;
     }
-    .button svg{
+    .return_button svg{
         width: 15px;
         height: 15px;
         position: relative;
