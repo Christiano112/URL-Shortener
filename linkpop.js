@@ -6,17 +6,30 @@ const modalContainer = document.getElementById("modal-container");
 const modal = document.getElementById("modal");
 const link = document.getElementById("link-input");
 const copyLinkBtn = document.getElementById("copy-link");
+const viewPopUp = document.getElementById("show-view_modal");
+
+// showModal.addEventListener("click", () => {
+//   modalContainer.style.display = "block";
+// });
+
+// closeModalBtn.addEventListener("click", () => {
+//   modalContainer.style.display = "none";
+// });
+
+// modal.addEventListener("click", () => {
+//   modalContainer.style.display = "none";
+// });
 
 showModal.addEventListener("click", () => {
-  modalContainer.style.display = "block";
+  viewPopUp.style.display = "block";
 });
 
 closeModalBtn.addEventListener("click", () => {
-  modalContainer.style.display = "none";
+  viewPopUp.style.display = "none";
 });
 
 modal.addEventListener("click", () => {
-  modalContainer.style.display = "none";
+  viewPopUp.style.display = "none";
 });
 
 function copyText() {

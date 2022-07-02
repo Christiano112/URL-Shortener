@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="linkpop.css" />
+    <script defer src="linkpop.js"></script>
     <title>URL Shortener</title>
 </head>
 
@@ -44,15 +46,56 @@
                 </svg>
                 <label for="surl">Customize your link</label>
                 <input type="url" id="surl" name="surl">
+                <!-- My URL should be in an anchor tag -->
                 <button class="urllink">My URL</button>
-                <button class="bubit">Bub It</button>
+                <button class="bubit" id="show-modal">Bub It</button>
             </form>
 
             <!-- <img src="/images/Search engines-amico.svg"> -->
 
         </div>
 
+        <!-- LINK POP UP SECTION (SHOW MODAL) -->
+        <section class="show-view_modal" id="show-view_modal">
+            <div class="modal-container" id="modal-container">
+                <div class="modal" id="modal"></div>
+                <div class="content">
+                    <p class="close-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="44" height="44"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round" id="close-btn">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <line x1="18" y1="6" x2="6" y2="18" />
+                            <line x1="6" y1="6" x2="18" y2="18" />
+                        </svg>
+                    </p>
+        
+                    <!-- <button class="close-btn" id="close-btn">close btn</button> -->
+                    <h1 class="modal-title">Your Shortened Bub-URL:</h1>
+                    <div class="input-box">
+                        <input type="text" placeholder="https://www.randomlink.com/" id="link-input" />
+                        <button id="copy-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="44"
+                                height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <rect x="8" y="8" width="12" height="12" rx="2" />
+                                <path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2" />
+                            </svg>
+                            <span>Copy</span>
+                        </button>
+                    </div>
+        
+                    <div class="stats">
+                        <a href="#" class="url">My URLs</a>
+                        <a href="#" class="detailed-stats">Detailed Stats</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+
     <script src="/script.js" defer></script>
 </body>
 
