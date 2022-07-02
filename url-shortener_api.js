@@ -19,7 +19,7 @@ fetch("https://shorturl22.herokuapp.com/api/url/shorten", requestOptions)
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
 
-
+let 
 
 
 // GET API
