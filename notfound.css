@@ -1,9 +1,9 @@
 *{box-sizing: border-box;}
 
-/* body{
+body{
     margin: 0;
     font-family: sans-serif;
-} */
+}
 
 header{
     font-family: monospace;
@@ -32,7 +32,7 @@ header{
 
 .containText{
     margin-bottom: 30px;
-    color: grey;
+    color: #061f18;
 }
 
 .containText p{
@@ -41,7 +41,7 @@ header{
 
 .return_button{
     color: white;
-    background-color: hsl(0, 65%, 37%);
+    background-color: #174f3f;
     border-radius: 5px;
     padding: 0.7rem 1.5rem;
     text-decoration: none;
@@ -53,15 +53,15 @@ header{
 }
 
 .return_button:hover{
-    color: hsl(0, 65%, 37%);
+    color: #174f3f;
     background-color: white;
-    border: 0.5px solid hsl(0, 65%, 37%);
+    border: 0.5px solid #174f3f;
     width: 1em;
     height: 1em;
 }
 
 .return_button:hover svg{
-    stroke: hsl(0, 65%, 37%);
+    stroke: #174f3f;
 }
 
 @media screen and (max-width: 700px) {

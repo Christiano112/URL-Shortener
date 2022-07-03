@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
-    background-color: rgb(246, 232, 246);
+    /* background-color: rgb(246, 232, 246); */
+    /* background-color: #c0eded; */
+    background-color: #fff;
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
 }
@@ -18,7 +20,7 @@ h1 {
 }
 
 #go-back {
-    background-color: blueviolet;
+    background-color: #174f3f;
     border: 0;
     outline: none;
     border-radius: 50%;
@@ -78,17 +80,15 @@ li {
     cursor: pointer;
 }
 
-#detailed,
-#clear-btn {
-    background-color: rgb(246, 226, 246);
-    border: 3px solid #8a2be2;
+#detailed {
+    border: 3px solid #c0eded;
     border-radius: 6px;
 }
 
 .copy {
-    background-color: blueviolet;
+    background-color: #174f3f;
     cursor: pointer;
-    color: white;
+    color: #fff;
     border: 0;
     outline: 0;
     border-radius: 6px;
@@ -107,6 +107,10 @@ li {
 
 #clear-btn{
     display: none;
+    color: #fff;
+    background-color: #174f3f;
+    border-radius: 6px;
+    border: none;
 }
 
 

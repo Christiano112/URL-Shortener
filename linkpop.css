@@ -12,7 +12,7 @@ html {
 
 section.show-view_modal {
   /* display: flex; */
-  /* display: none; */
+  display: none;
   /* justify-content: center;
   flex-direction: column;
   align-items: center; */
@@ -64,7 +64,7 @@ section.show-view_modal {
 .input-box {
   margin: 1rem 0;
   text-align: left;
-  border: 1px solid yellow;
+  border: 1px solid #c0eded;
   border-radius: 8px;
   display: flex;
   width: 100%;
@@ -83,7 +83,7 @@ section.show-view_modal {
 
 .input-box button {
   outline: 0;
-  background-color: brown;
+  background-color: #174f3f;
   color: white;
   font-family: inherit;
   border: none;
@@ -115,9 +115,9 @@ section.show-view_modal {
 
 .detailed-stats {
   text-decoration: none;
-  color: brown;
+  color: #174f3f;
   padding: 14px 4rem;
-  border: 1px solid brown;
+  border: 1px solid #c0eded;
   border-radius: 8px;
   white-space: nowrap;
 }
@@ -146,5 +146,7 @@ section.show-view_modal {
     width: 80%;
     padding: 14px 1rem;
     white-space: unset;
+    background-color: #174f3f;
+    color: #c0eded;
   }
 }

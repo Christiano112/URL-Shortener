@@ -13,7 +13,7 @@
 
 <body>
     <nav class="navbar">
-        <div class="brand-title">Bub-It</div>
+        <div class="brand-title">Elide</div>
         <a href="#" class="toggle-button">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -39,7 +39,7 @@
                     <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
                 </svg>
                 <label for="lurl">Enter your long URL here</label>
-                <input type="text" id="lurl" name="lurl">
+                <input type="text" id="lurl" name="lurl" required>
 
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="20" height="20"
                     viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round"
@@ -51,8 +51,8 @@
                 <label for="surl">Customize your link</label>
                 <input type="url" id="surl" name="surl">
                 <!-- My URL should be in an anchor tag -->
-                <button class="urllink">My URL</button>
-                <button class="bubit" id="show-modal" type="submit">Bub It</button>
+                <a href="shortener.html"><button class="urllink" type="button">My URL</button></a>
+                <button class="bubit" id="show-modal" type="submit">Elide</button>
             </form>
 
             <!-- <img src="/images/Search engines-amico.svg"> -->
@@ -76,9 +76,9 @@
                 </p>
 
                 <!-- <button class="close-btn" id="close-btn">close btn</button> -->
-                <h1 class="modal-title">Your Shortened Bub-URL:</h1>
+                <h1 class="modal-title">Your Shortened Elide-URL:</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="Your shortened url" id="link-input" />
+                    <input type="text" placeholder="your url" id="link-input" />
                     <button id="copy-link">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="44"
                             height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
@@ -93,13 +93,12 @@
 
                 <div class="stats">
                     <a href="./shortener.html" class="url">My URLs</a>
-                    <a href="#" class="detailed-stats">Detailed Stats</a>
+                    <a href="#" class="detailed-stats">My URL Stats</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 404 ERROR NOT FOUND POP UP -->
 
     <script>
         document.querySelector("form").addEventListener("submit", e => {
