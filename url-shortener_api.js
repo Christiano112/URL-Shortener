@@ -37,6 +37,19 @@ formNew.addEventListener("submit", function (e) {
             function openValidLink() {
                 window.open(`${link.shortUrl}`, "_blank");
             }
+
+            const first = document.getElementById("lurl");
+            const time = new Date();
+            const date = new Date();
+
+            if (first.value === "") {
+                return
+            }
+
+            localStorage.setItem("links", JSON.stringify([...JSON.parse(localStorage.getItem("links") || "[]"),
+            { originalLink: first.value, bubbedLink: link.shortUrl, clickedTime: time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), clickedDate: date.toLocaleDateString() }]));
+
+            first.value = "";
         },
 
         error: (error) => {
@@ -44,12 +57,11 @@ formNew.addEventListener("submit", function (e) {
             document.getElementById("link-input").value = "Input a valid URL";
             document.getElementById("link-input").style.color = "red";
 
-            setTimeout(openLink, 2000); 
+            setTimeout(openLink, 2000);
 
             function openLink() {
                 window.open(`${notfound}`, '_blank');
             }
         }
     });
-    
 })
