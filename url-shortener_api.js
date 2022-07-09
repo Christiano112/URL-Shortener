@@ -32,11 +32,11 @@ formNew.addEventListener("submit", function (e) {
             console.log(`Long URL was ${link.destination}, short URL is ${link.shortUrl}`);
             document.getElementById("link-input").value = `${link.shortUrl}`;
 
-            setTimeout(openValidLink, 2000);
+//             setTimeout(openValidLink, 2000);
 
-            function openValidLink() {
-                window.open(`${link.shortUrl}`, "_blank");
-            }
+//             function openValidLink() {
+//                 window.open(`${link.shortUrl}`, "_blank");
+//             }
 
             const first = document.getElementById("lurl");
             const time = new Date();
