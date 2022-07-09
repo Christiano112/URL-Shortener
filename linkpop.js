@@ -8,17 +8,6 @@ const link = document.getElementById("link-input");
 const copyLinkBtn = document.getElementById("copy-link");
 const viewPopUp = document.getElementById("show-view_modal");
 
-// showModal.addEventListener("click", () => {
-//   modalContainer.style.display = "block";
-// });
-
-// closeModalBtn.addEventListener("click", () => {
-//   modalContainer.style.display = "none";
-// });
-
-// modal.addEventListener("click", () => {
-//   modalContainer.style.display = "none";
-// });
 
 showModal.addEventListener("click", () => {
   viewPopUp.style.display = "block";
@@ -28,9 +17,6 @@ closeModalBtn.addEventListener("click", () => {
   viewPopUp.style.display = "none";
 });
 
-// modal.addEventListener("click", () => {
-//   viewPopUp.style.display = "none";
-// });
 
 function copyText() {
   if (link.value === "") return;

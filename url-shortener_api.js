@@ -5,86 +5,51 @@ const formNew = document.getElementById("url-form");
 formNew.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    // const preUrl = new FormData(formNew);
-    // const url = new URLSearchParams(preUrl);
+    let longurl = document.getElementById("lurl").value;
+    let notfound = "notfound.html";
+    // console.log(longurl);
 
-    // console.log([...url]);
+    let linkRequest = {
+        destination: `${longurl}`,
+        domain: { fullName: "rebrand.ly" }
+        //, slashtag: "A_NEW_SLASHTAG"
+        // , title: "Rebrandly YouTube channel"
+    }
 
-    // var raw = "{\r\n    \"longUrl\":\"https://www.cbsnews.com/news/missing-idaho-kids-jj-vallow-tylee-ryan-lori-daybell-details-investigation-48-hours/\"\r\n}";
-    // let yourUrl = document.getElementById("lurl").value;
-    // var raw = "longUrl:yourUrl"
+    let requestHeaders = {
+        "Content-Type": "application/json",
+        "apikey": "bd08b6e8ba2740939d638140b3831425",
+        // "workspace": "YOUR_WORKSPACE_ID"
+    }
 
-    // let url = '"longUrl":"https://www.cbsnews.com/news/missing-idaho-kids-jj-vallow-tylee-ryan-lori-daybell-details-investigation-48-hours/"'
+    $.ajax({
+        url: "https://api.rebrandly.com/v1/links",
+        type: "post",
+        data: JSON.stringify(linkRequest),
+        headers: requestHeaders,
+        dataType: "json",
+        success: (link) => {
+            console.log(`Long URL was ${link.destination}, short URL is ${link.shortUrl}`);
+            document.getElementById("link-input").value = `${link.shortUrl}`;
 
-    let inputUrl = document.getElementById("lurl").value;
-    // var longUrl = inputUrl;
+            setTimeout(openValidLink, 2000);
 
+            function openValidLink() {
+                window.open(`${link.shortUrl}`, "_blank");
+            }
+        },
+
+        error: (error) => {
+            console.log(`Error: ${error}`);
+            document.getElementById("link-input").value = "Input a valid URL";
+            document.getElementById("link-input").style.color = "red";
+
+            setTimeout(openLink, 2000); 
+
+            function openLink() {
+                window.open(`${notfound}`, '_blank');
+            }
+        }
+    });
     
-    let url = {"longUrl": inputUrl}
-
-    var requestOptions = {
-        method: 'POST',
-        body: url,
-        redirect: 'follow'
-    };
-
-    fetch("https://shorturl22.herokuapp.com/api/url/shorten", requestOptions)
-        .then(function (res) {
-            console.log(res.status);
-            console.log(url)
-            // if (res.status === 404) {
-            //     window.open("notfound.html", target = "_blank");
-            // }
-
-            return res.text();
-        })
-
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error));
-
-
-    // GET API
-// var requestOptions = {
-//     method: 'GET',
-//     redirect: 'follow'
-// };
-
-// fetch("shorturl22.herokuapp.com/dG71svLsL", requestOptions)
-//     .then(function (res) {
-//         console.log(res.status);
-//         if (res.status === 404) {
-//             window.open("notfound.html", target = "_blank");
-//         }
-
-//         return res.text();
-//     })
-//     // .then(response => response.text())
-//     .then(result => console.log(result))
-//     .catch(error => console.log('error', error));
-
 })
-
-
-
-
-
-
-
-// .then(function (res) {
-//     console.log(res.status);
-//     if (res.status === 404) {
-//         alert(`User with email does not exist.`)
-//     } else if (res.status === 401) {
-//         alert(`Incorrect password, try again!`)
-//     } else {
-//         setTimeout(openNew, 2000)
-//         function openNew() {
-//             alert("Login is Successful");
-//             window.open("home.html", target = "_self")
-//         }
-//     }
-//     // if(!res.ok) {
-//     //     throw new Error("HTTP status " + res.status);
-//     // }
-//     return res.json();
-// })

@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700;800;900&display=swap');
 
 body {
-    /* background-color: rgb(246, 232, 246); */
-    /* background-color: #c0eded; */
     background-color: #fff;
     overflow-x: hidden;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 a {

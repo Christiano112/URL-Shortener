@@ -36,17 +36,18 @@
                 <div id="div">
                     <div id="links-div">
                         <div id="links-sub-div">
-                        <div>
-                            <p id="original-link">${link.originalLink}</p>
-                            <p class="bubbed-link">${link.bubbedLink}</p>
+                            <div>
+                                <p id="original-link">${link.originalLink}</p>
+                                <p class="bubbed-link">${link.bubbedLink}</p>
+                            </div>
+                            <p id="link-time">${link.clickedDate} ${link.clickedTime}</p>
                         </div>
-                        <p id="link-time">${link.clickedDate} ${link.clickedTime}</p>
-                    </div>
                     </div>
                     <div id="btn-div">
                         <button id="detailed"><a href="#">Detailed stats</a></button>
                         <button class="copy" id="${link.bubbedLink}" onclick="copyTextFunction()">
                         <img src="./images/icons8-copy-17.png" alt="">Copy</button>
+                    </div>
                 </div>
             `
             ul.insertBefore(li, ul.children[0]);
