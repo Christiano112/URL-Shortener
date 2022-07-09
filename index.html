@@ -100,31 +100,6 @@
         </div>
     </section>
 
-    <!-- <script>
-        document.querySelector("form").addEventListener("submit", e => {
-            e.preventDefault();
-        });
-
-        const form = document.querySelector("form");
-
-        form.addEventListener("submit", function () {
-            const ul = document.querySelector("#link-list");
-            const first = document.getElementById("lurl");
-            const second = document.getElementById("surl");
-            const time = new Date();
-            const date = new Date();
-
-            if (first.value === "" || second.value === "") {
-                return
-            }
-
-            localStorage.setItem("links", JSON.stringify([...JSON.parse(localStorage.getItem("links") || "[]"),
-            { originalLink: first.value, bubbedLink: second.value, clickedTime: time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), clickedDate: date.toLocaleDateString() }]));
-
-            first.value = "";
-            second.value = "";
-        })
-    </script> -->
     <script src="/script.js" defer></script>
     <script src="url-shortener_api.js"></script>
 </body>
