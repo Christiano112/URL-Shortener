@@ -13,3 +13,6 @@ QA to test functionality and ensure 100% compliance with design
 
 ## LIVE LINK
 [URL Shortener](https://web-url-shortener.netlify.app/)
+
+## DOCUMENTATION POST
+[Hashnode Link](https://shportfoliobootcamp-team3.hashnode.dev/task-4-build-a-url-shortener-website)
